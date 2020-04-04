@@ -852,10 +852,7 @@ export class App extends React.Component<any, AppState> {
       this.roomID = roomMatch[1];
       this.roomKey = roomMatch[2];
       this.socket.on("init-room", () => {
-        // this.socket && this.socket.emit("join-room", this.roomID);
-        if (this.socket) {
-          this.socket.emit("join-room", this.roomID);
-        }
+        this.socket && this.socket.emit("join-room", this.roomID);
       });
       this.socket.on(
         "client-broadcast",
